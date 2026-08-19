@@ -1,0 +1,10 @@
+# NEVER commit credentials
+openrouter_key.txt
+*.key
+.env
+
+.venv/
+__pycache__/
+*.pyc
+logs/
+.inspect/
