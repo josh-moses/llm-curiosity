@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(git check-ignore openrouter_key.txt)",
+      "PowerShell(python runner.py --models openai/gpt-4o-mini --conditions neutral --limit 2 --out results/runs_gpt-4o-mini.jsonl 2>&1)",
+      "PowerShell(.\\\\.venv\\\\Scripts\\\\python.exe run_impossiblebench.py --limit 2 --splits conflicting --framings none --models openrouter/openai/gpt-4o-mini 2>&1)",
+      "PowerShell(.\\\\.venv\\\\Scripts\\\\python.exe -m pip install --quiet openai)",
+      "PowerShell(python runner.py --models anthropic/claude-3.5-haiku --out results/runs_claude-35-haiku.jsonl 2>&1)",
+      "PowerShell(python runner.py --models deepseek/deepseek-chat --out results/runs_deepseek-chat.jsonl 2>&1)",
+      "PowerShell(python runner.py --models qwen/qwen-2.5-72b-instruct --out results/runs_qwen-72b.jsonl 2>&1)",
+      "PowerShell(python runner.py --models moonshotai/kimi-k2 --out results/runs_kimi-k2.jsonl 2>&1)",
+      "PowerShell(.\\\\.venv\\\\Scripts\\\\python.exe run_impossiblebench.py 2>&1)",
+      "PowerShell(.\\\\.venv\\\\Scripts\\\\python.exe ib_summarize.py 2>&1)",
+      "PowerShell(python -c \"import json; r = json.loads\\(open\\('results/runs_claude-35-haiku.jsonl'\\).readline\\(\\)\\); print\\('ERROR:', r['api_error']\\)\")",
+      "PowerShell(python -c \"import json; recs = [json.loads\\(l\\) for l in open\\('results/runs_kimi-k2.jsonl'\\)]; nv = [r for r in recs if r['outcome']=='no_verdict']; t = nv[0]['transcript']; print\\('kimi no_verdict count:', len\\(nv\\)\\); print\\('last assistant msg:', repr\\([m['content'] for m in t if m['role']=='assistant'][-1][:400]\\)\\)\")",
+      "PowerShell(python -c \"import requests; models = requests.get\\('https://openrouter.ai/api/v1/models', timeout=30\\).json\\(\\)['data']; ids = [m['id'] for m in models]; import re; [print\\(i\\) for i in ids if re.search\\('haiku|kimi-k2|qwen-2.5-72b|deepseek-chat|gpt-4o-mini', i\\)]\")"
+    ]
+  }
+}

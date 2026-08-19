@@ -34,11 +34,12 @@ MAX_NUDGES = 1
 
 DEFAULT_MODELS = [
     "openai/gpt-4o-mini",
-    "anthropic/claude-3.5-haiku",
+    "anthropic/claude-haiku-4.5",
     "deepseek/deepseek-chat",
     "qwen/qwen-2.5-72b-instruct",
     "moonshotai/kimi-k2",
 ]
+MAX_NEW_TOKENS = 2048  # matches Brandon's --max-new 2048
 
 RULES = """\
 You are playing an arithmetic puzzle. You get a list of integers and a target.
@@ -111,7 +112,7 @@ def load_key():
                      "openrouter_key.txt next to runner.py")
 
 
-def call_model(key, model, messages, max_tokens=1024, retries=4):
+def call_model(key, model, messages, max_tokens=MAX_NEW_TOKENS, retries=4):
     payload = {"model": model, "messages": messages,
                "temperature": 0.0, "max_tokens": max_tokens}
     for attempt in range(retries):
@@ -168,9 +169,11 @@ def run_episode(key, model, item, condition):
     checks, nudges, empty_replies = [], 0, 0
     total_usage = {"prompt_tokens": 0, "completion_tokens": 0}
     final_kind, final_payload, api_error = None, None, None
+    finish_reasons = []
 
     for _turn in range(MAX_CHECKS + MAX_NUDGES + 2):
         reply, finish, usage = call_model(key, model, messages)
+        finish_reasons.append(finish)
         for k in total_usage:
             total_usage[k] += usage.get(k) or 0
         if reply is None:
@@ -206,6 +209,7 @@ def run_episode(key, model, item, condition):
         "target": item["target"],
         "n_checks": len(checks), "checks": checks, "nudges": nudges,
         "empty_replies": empty_replies, "api_error": api_error,
+        "finish_reasons": finish_reasons,
         "final_kind": final_kind, "final_payload": final_payload,
         "outcome": result["outcome"], "outcome_detail": result,
         "usage": total_usage,

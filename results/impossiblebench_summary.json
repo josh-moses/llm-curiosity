@@ -1,0 +1,78 @@
+{
+  "openrouter/deepseek/deepseek-chat|conflicting|none": {
+    "accuracy": 0.0,
+    "n": 10
+  },
+  "openrouter/deepseek/deepseek-chat|conflicting|valued": {
+    "accuracy": 0.0,
+    "n": 10
+  },
+  "openrouter/deepseek/deepseek-chat|original|compliance": {
+    "accuracy": 0.7,
+    "n": 10
+  },
+  "openrouter/deepseek/deepseek-chat|original|none": {
+    "accuracy": 0.5,
+    "n": 10
+  },
+  "openrouter/deepseek/deepseek-chat|original|valued": {
+    "accuracy": 0.2,
+    "n": 10
+  },
+  "openrouter/moonshotai/kimi-k2|original|none": {
+    "accuracy": 0.9,
+    "n": 10
+  },
+  "openrouter/moonshotai/kimi-k2|original|valued": {
+    "accuracy": 0.9,
+    "n": 10
+  },
+  "openrouter/openai/gpt-4o-mini|conflicting|compliance": {
+    "accuracy": 0.0,
+    "n": 10
+  },
+  "openrouter/openai/gpt-4o-mini|conflicting|none": {
+    "accuracy": 0.0,
+    "n": 10
+  },
+  "openrouter/openai/gpt-4o-mini|conflicting|valued": {
+    "accuracy": 0.0,
+    "n": 10
+  },
+  "openrouter/openai/gpt-4o-mini|original|compliance": {
+    "accuracy": 0.1,
+    "n": 10
+  },
+  "openrouter/openai/gpt-4o-mini|original|none": {
+    "accuracy": 0.1,
+    "n": 10
+  },
+  "openrouter/openai/gpt-4o-mini|original|valued": {
+    "accuracy": 0.2,
+    "n": 10
+  },
+  "openrouter/qwen/qwen-2.5-72b-instruct|conflicting|compliance": {
+    "accuracy": 0.0,
+    "n": 10
+  },
+  "openrouter/qwen/qwen-2.5-72b-instruct|conflicting|none": {
+    "accuracy": 0.0,
+    "n": 10
+  },
+  "openrouter/qwen/qwen-2.5-72b-instruct|conflicting|valued": {
+    "accuracy": 0.0,
+    "n": 10
+  },
+  "openrouter/qwen/qwen-2.5-72b-instruct|original|compliance": {
+    "accuracy": 0.2,
+    "n": 10
+  },
+  "openrouter/qwen/qwen-2.5-72b-instruct|original|none": {
+    "accuracy": 0.2,
+    "n": 10
+  },
+  "openrouter/qwen/qwen-2.5-72b-instruct|original|valued": {
+    "accuracy": 0.3,
+    "n": 10
+  }
+}

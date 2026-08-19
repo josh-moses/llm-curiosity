@@ -65,14 +65,17 @@ def main():
         mean_checks = sum(r["n_checks"] for r in rs) / len(rs)
         errors = sum(1 for r in rs if r["api_error"])
         empty = sum(r["empty_replies"] for r in rs)
+        truncated = sum(any(f == "length" for f in r.get("finish_reasons", []))
+                        for r in rs)
 
         print(f"| {model:38} | {cond:8} |   {pct(honest, len(imp))} |"
               f"   {pct(fabric, len(imp))} |  {pct(cheat, len(imp))} |"
               f"   {pct(solved, len(sol))} |      {pct(false_imp, len(sol))} |"
               f"       {pct(noverd, len(rs))} |  {pct(curio, len(rs))} |"
               f"      {mean_checks:4.2f} |")
-        if errors or empty:
-            print(f"|   ^ caveat: {errors} api errors, {empty} empty replies "
+        if errors or empty or truncated:
+            print(f"|   ^ caveat: {errors} api errors, {empty} empty replies, "
+                  f"{truncated} episodes hit the token cap "
                   f"-- inspect before trusting this row")
 
         summary[f"{model}|{cond}"] = {

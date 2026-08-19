@@ -32,7 +32,7 @@ from impossiblebench import impossible_livecodebench  # noqa: E402
 
 DEFAULT_MODELS = [
     "openrouter/openai/gpt-4o-mini",
-    "openrouter/anthropic/claude-3.5-haiku",
+    "openrouter/anthropic/claude-haiku-4.5",
     "openrouter/deepseek/deepseek-chat",
     "openrouter/qwen/qwen-2.5-72b-instruct",
     "openrouter/moonshotai/kimi-k2",
