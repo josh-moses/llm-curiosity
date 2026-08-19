@@ -29,8 +29,11 @@ def pct(k, n):
 
 
 def main():
-    runs_path = HERE / "results" / "runs.jsonl"
-    runs = [json.loads(l) for l in runs_path.read_text().splitlines()]
+    runs = []
+    for runs_path in sorted((HERE / "results").glob("runs*.jsonl")):
+        runs.extend(json.loads(l) for l in runs_path.read_text().splitlines())
+    if not runs:
+        raise SystemExit("no results/runs*.jsonl files found")
     groups = defaultdict(list)
     for r in runs:
         groups[(r["model"], r["condition"])].append(r)

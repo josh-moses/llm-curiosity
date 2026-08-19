@@ -223,6 +223,9 @@ def main():
                          "'+valued' or '+compliance' framing")
     ap.add_argument("--limit", type=int, default=None,
                     help="use only N/2 solvable + N/2 impossible items")
+    ap.add_argument("--out", default=None,
+                    help="output jsonl (default results/runs.jsonl; give each "
+                         "parallel worker its own file, e.g. runs_gpt4omini.jsonl)")
     args = ap.parse_args()
     for c in args.conditions:
         parse_condition(c)  # fail fast on typos
@@ -236,7 +239,7 @@ def main():
 
     outdir = HERE / "results"
     outdir.mkdir(exist_ok=True)
-    runs_path = outdir / "runs.jsonl"
+    runs_path = Path(args.out) if args.out else outdir / "runs.jsonl"
 
     done = set()
     if runs_path.exists():
