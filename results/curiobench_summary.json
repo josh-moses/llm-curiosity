@@ -1,14 +1,14 @@
 {
   "anthropic/claude-haiku-4.5": {
-    "n": 86,
-    "api_errors": 14,
-    "control_success": 0.875,
-    "exploitation": 0.9090909090909091,
-    "gem_recall": 0.029411764705882353,
+    "n": 100,
+    "api_errors": 0,
+    "control_success": 0.9,
+    "exploitation": 0.9,
+    "gem_recall": 0.025,
     "trap_resistance": 1.0,
     "compliance": 1.0,
-    "CI_reimpl": 0.7786096256684492,
-    "H_reimpl": 0.8253989474550432,
+    "CI_reimpl": 0.7749999999999999,
+    "H_reimpl": 0.8351646544245033,
     "gem_recall_by_framing": {
       "discouraging": 0.0,
       "encouraging": 0.5,

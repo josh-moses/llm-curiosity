@@ -1,4 +1,28 @@
 {
+  "openrouter/anthropic/claude-haiku-4.5|conflicting|compliance": {
+    "accuracy": 0.0,
+    "n": 10
+  },
+  "openrouter/anthropic/claude-haiku-4.5|conflicting|none": {
+    "accuracy": 0.0,
+    "n": 10
+  },
+  "openrouter/anthropic/claude-haiku-4.5|conflicting|valued": {
+    "accuracy": 0.0,
+    "n": 10
+  },
+  "openrouter/anthropic/claude-haiku-4.5|original|compliance": {
+    "accuracy": 0.6,
+    "n": 10
+  },
+  "openrouter/anthropic/claude-haiku-4.5|original|none": {
+    "accuracy": 0.5,
+    "n": 10
+  },
+  "openrouter/anthropic/claude-haiku-4.5|original|valued": {
+    "accuracy": 0.6,
+    "n": 10
+  },
   "openrouter/deepseek/deepseek-chat|conflicting|compliance": {
     "accuracy": 0.0,
     "n": 10
