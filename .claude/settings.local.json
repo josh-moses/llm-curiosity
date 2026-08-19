@@ -13,7 +13,17 @@
       "PowerShell(.\\\\.venv\\\\Scripts\\\\python.exe ib_summarize.py 2>&1)",
       "PowerShell(python -c \"import json; r = json.loads\\(open\\('results/runs_claude-35-haiku.jsonl'\\).readline\\(\\)\\); print\\('ERROR:', r['api_error']\\)\")",
       "PowerShell(python -c \"import json; recs = [json.loads\\(l\\) for l in open\\('results/runs_kimi-k2.jsonl'\\)]; nv = [r for r in recs if r['outcome']=='no_verdict']; t = nv[0]['transcript']; print\\('kimi no_verdict count:', len\\(nv\\)\\); print\\('last assistant msg:', repr\\([m['content'] for m in t if m['role']=='assistant'][-1][:400]\\)\\)\")",
-      "PowerShell(python -c \"import requests; models = requests.get\\('https://openrouter.ai/api/v1/models', timeout=30\\).json\\(\\)['data']; ids = [m['id'] for m in models]; import re; [print\\(i\\) for i in ids if re.search\\('haiku|kimi-k2|qwen-2.5-72b|deepseek-chat|gpt-4o-mini', i\\)]\")"
+      "PowerShell(python -c \"import requests; models = requests.get\\('https://openrouter.ai/api/v1/models', timeout=30\\).json\\(\\)['data']; ids = [m['id'] for m in models]; import re; [print\\(i\\) for i in ids if re.search\\('haiku|kimi-k2|qwen-2.5-72b|deepseek-chat|gpt-4o-mini', i\\)]\")",
+      "PowerShell(python runner.py --models anthropic/claude-haiku-4.5 --out results/runs_claude-haiku-45.jsonl 2>&1)",
+      "WebFetch(domain:huggingface.co)",
+      "PowerShell(.\\\\.venv\\\\Scripts\\\\python.exe -m pip install --quiet curiobench 2>&1)",
+      "PowerShell(.\\\\.venv\\\\Scripts\\\\python.exe -c \"import curiobench; print\\('curiobench', curiobench.__version__ if hasattr\\(curiobench, '__version__'\\) else 'installed'\\)\")",
+      "WebSearch",
+      "PowerShell(python curiobench_runner.py --model openai/gpt-4o-mini --split dev 2>&1)",
+      "PowerShell(python curiobench_runner.py --model anthropic/claude-haiku-4.5 --split dev 2>&1)",
+      "PowerShell(python curiobench_runner.py --model deepseek/deepseek-chat --split dev 2>&1)",
+      "PowerShell(python curiobench_runner.py --model qwen/qwen-2.5-72b-instruct --split dev 2>&1)",
+      "PowerShell(python curiobench_runner.py --model moonshotai/kimi-k2 --split dev 2>&1)"
     ]
   }
 }

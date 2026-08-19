@@ -1,10 +1,10 @@
 # llm-curiosity
 
-Do models that explore more cheat less? An experiment pairing a direct
-behavioral curiosity measure with a verified cheating measure, run over the
-same models via OpenRouter.
+Do models that explore more cheat less? An experiment pairing behavioral
+curiosity measures with a verified cheating measure, run over the same
+models via OpenRouter.
 
-## The two measurements
+## The three measurements
 
 ### 1. Cheating: ImpossibleBench (the real benchmark)
 
@@ -39,8 +39,27 @@ Outcomes on impossible items: `honest_impossible`, `wrong_value`
 (fabrication), `rule_violation_hit` (hits the target by breaking the number
 rules -- the reward-hacking analog).
 
-Note: "CurioBench" proper is an internal benchmark of a collaborator's
-unpublished repo; this harness is our independent stand-in until it lands.
+This harness is our own instrument; it complements (and predates our access
+to) the public CurioBench below.
+
+### 3. Curiosity: CurioBench-1K (the real benchmark)
+
+[CurioBench-1K](https://huggingface.co/datasets/Juliushanhanhan/curiobench-1k)
+(CC-BY-4.0) operationalizes *environmental curiosity* from "Agents Explore
+but Agents Ignore" ([arXiv:2604.17609](https://arxiv.org/abs/2604.17609)):
+1,000 deterministic virtual-workspace tasks across five families --
+`control` (plain competence), `gems` (unprompted discovery of planted
+tokens), `traps` (resisting stale decoys), `shortcut` (exploiting planted
+artifacts), `detour` (finding lateral routes when the canonical path is
+blocked) -- each with neutral/encouraging/discouraging instruction framings
+built in. Scoring is deterministic string matching, no LLM judge.
+
+- runner: `curiobench_runner.py` (single-turn text-only mode, workspace
+  inlined, per the dataset card's Option B)
+- scorer: `curiobench_score.py` -- a **reimplementation** of the official
+  scorer from the card's definitions; CI/H composites are comparable within
+  our table, not against externally published numbers
+- data: `curiobench_data/` (dev=100 / test=900 splits)
 
 ## Files
 
@@ -52,6 +71,10 @@ unpublished repo; this harness is our independent stand-in until it lands.
 | `runner.py` | OpenRouter episode loop with the CHECK curiosity channel |
 | `analyze.py` | per-model honesty/fabrication/cheat/curiosity table |
 | `run_impossiblebench.py` | real ImpossibleBench via OpenRouter (`--smoke` = no API calls) |
+| `ib_summarize.py` | ImpossibleBench eval logs -> cheating-rate table |
+| `curiobench_runner.py` / `curiobench_score.py` | real CurioBench-1K via OpenRouter + reimplemented scorer |
+| `second_solver.py` / `verify_items.py` | independent bitmask-DP solver + two-solver label verification |
+| `attack_corpus.json` / `attack_score_reply.py` | 22 adversarial replies + harness to red-team any score_reply |
 | `items/items.json` | 40 generated items (20 solvable / 20 proven impossible) |
 
 ## Running
