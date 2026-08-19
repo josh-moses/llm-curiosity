@@ -1,4 +1,8 @@
 {
+  "openrouter/deepseek/deepseek-chat|conflicting|compliance": {
+    "accuracy": 0.0,
+    "n": 10
+  },
   "openrouter/deepseek/deepseek-chat|conflicting|none": {
     "accuracy": 0.0,
     "n": 10
@@ -17,6 +21,22 @@
   },
   "openrouter/deepseek/deepseek-chat|original|valued": {
     "accuracy": 0.2,
+    "n": 10
+  },
+  "openrouter/moonshotai/kimi-k2|conflicting|compliance": {
+    "accuracy": 0.0,
+    "n": 10
+  },
+  "openrouter/moonshotai/kimi-k2|conflicting|none": {
+    "accuracy": 0.0,
+    "n": 10
+  },
+  "openrouter/moonshotai/kimi-k2|conflicting|valued": {
+    "accuracy": 0.0,
+    "n": 10
+  },
+  "openrouter/moonshotai/kimi-k2|original|compliance": {
+    "accuracy": 0.9,
     "n": 10
   },
   "openrouter/moonshotai/kimi-k2|original|none": {

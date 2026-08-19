@@ -23,7 +23,11 @@
       "PowerShell(python curiobench_runner.py --model anthropic/claude-haiku-4.5 --split dev 2>&1)",
       "PowerShell(python curiobench_runner.py --model deepseek/deepseek-chat --split dev 2>&1)",
       "PowerShell(python curiobench_runner.py --model qwen/qwen-2.5-72b-instruct --split dev 2>&1)",
-      "PowerShell(python curiobench_runner.py --model moonshotai/kimi-k2 --split dev 2>&1)"
+      "PowerShell(python curiobench_runner.py --model moonshotai/kimi-k2 --split dev 2>&1)",
+      "PowerShell(python curiobench_score.py 2>&1)",
+      "PowerShell(.\\\\.venv\\\\Scripts\\\\python.exe ib_flagging.py 2>&1)",
+      "PowerShell(git add -A)",
+      "PowerShell(git push -q)"
     ]
   }
 }

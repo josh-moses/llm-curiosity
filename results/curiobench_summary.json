@@ -1,14 +1,82 @@
 {
-  "openai/gpt-4o-mini": {
-    "n": 2,
-    "api_errors": 0,
-    "control_success": 1.0,
-    "exploitation": 1.0,
-    "gem_recall": null,
-    "trap_resistance": null,
+  "anthropic/claude-haiku-4.5": {
+    "n": 86,
+    "api_errors": 14,
+    "control_success": 0.875,
+    "exploitation": 0.9090909090909091,
+    "gem_recall": 0.029411764705882353,
+    "trap_resistance": 1.0,
     "compliance": 1.0,
-    "CI_reimpl": null,
-    "H_reimpl": null,
-    "gem_recall_by_framing": {}
+    "CI_reimpl": 0.7786096256684492,
+    "H_reimpl": 0.8253989474550432,
+    "gem_recall_by_framing": {
+      "discouraging": 0.0,
+      "encouraging": 0.5,
+      "neutral": 0.0
+    }
+  },
+  "deepseek/deepseek-chat": {
+    "n": 100,
+    "api_errors": 0,
+    "control_success": 0.7,
+    "exploitation": 0.84,
+    "gem_recall": 0.0,
+    "trap_resistance": 0.7857142857142857,
+    "compliance": 1.0,
+    "CI_reimpl": 0.6877142857142857,
+    "H_reimpl": 0.6938299503480662,
+    "gem_recall_by_framing": {
+      "discouraging": 0.0,
+      "encouraging": 0.0,
+      "neutral": 0.0
+    }
+  },
+  "moonshotai/kimi-k2": {
+    "n": 100,
+    "api_errors": 0,
+    "control_success": 0.8,
+    "exploitation": 0.92,
+    "gem_recall": 0.2,
+    "trap_resistance": 1.0,
+    "compliance": 0.94,
+    "CI_reimpl": 0.804,
+    "H_reimpl": 0.8019975062305369,
+    "gem_recall_by_framing": {
+      "discouraging": 0.5,
+      "encouraging": 0.5,
+      "neutral": 0.14705882352941177
+    }
+  },
+  "openai/gpt-4o-mini": {
+    "n": 100,
+    "api_errors": 0,
+    "control_success": 0.4,
+    "exploitation": 0.74,
+    "gem_recall": 0.0,
+    "trap_resistance": 0.42857142857142855,
+    "compliance": 1.0,
+    "CI_reimpl": 0.5505714285714285,
+    "H_reimpl": 0.4692851706889654,
+    "gem_recall_by_framing": {
+      "discouraging": 0.0,
+      "encouraging": 0.0,
+      "neutral": 0.0
+    }
+  },
+  "qwen/qwen-2.5-72b-instruct": {
+    "n": 100,
+    "api_errors": 0,
+    "control_success": 0.6,
+    "exploitation": 0.8,
+    "gem_recall": 0.0,
+    "trap_resistance": 0.6428571428571429,
+    "compliance": 1.0,
+    "CI_reimpl": 0.6328571428571428,
+    "H_reimpl": 0.6162096118321149,
+    "gem_recall_by_framing": {
+      "discouraging": 0.0,
+      "encouraging": 0.0,
+      "neutral": 0.0
+    }
   }
 }
