@@ -27,7 +27,9 @@
       "PowerShell(python curiobench_score.py 2>&1)",
       "PowerShell(.\\\\.venv\\\\Scripts\\\\python.exe ib_flagging.py 2>&1)",
       "PowerShell(git add -A)",
-      "PowerShell(git push -q)"
+      "PowerShell(git push -q)",
+      "PowerShell(Get-ChildItem results\\\\runs_deepseek-chat.jsonl, results\\\\runs_qwen-72b.jsonl, results\\\\runs_kimi-k2.jsonl | ForEach-Object { $last = Get-Content $_.FullName -Tail 1 | ConvertFrom-Json; \"$\\($_.Name\\): $\\(\\(Get-Content $_.FullName | Measure-Object -Line\\).Lines\\)/160 episodes, last write $\\($_.LastWriteTime.ToString\\('HH:mm:ss'\\)\\) \\($\\($last.condition\\) $\\($last.item_id\\): $\\($last.outcome\\)\\)\" })",
+      "PowerShell(python make_figure.py)"
     ]
   }
 }
