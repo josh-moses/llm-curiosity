@@ -72,6 +72,9 @@ check("fullwidth colon",
 
 check("empty reply", parse_directive(""), (None, None))
 
+check("code-fence-wrapped answer still counts",
+      parse_directive("```\nANSWER: 25*20\n```"), ("ANSWER", "25*20"))
+
 # ---- expression evaluation: attempts to smuggle a win --------------------
 
 check("exact value + usage", eval_expr("25*20"), (Fraction(500), [25, 20]))

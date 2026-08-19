@@ -39,6 +39,8 @@ def parse_directive(reply):
     if not reply:
         return None, None
     lines = [l for l in (l.strip() for l in reply.strip().splitlines()) if l]
+    # code-fence lines (```/~~~) are wrapping, not content -- skip them
+    lines = [l for l in lines if not re.fullmatch(r"(`{3,}|~{3,})\w*", l)]
     for line in reversed(lines):
         m = DIRECTIVE_RE.match(line)
         if m:
