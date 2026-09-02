@@ -29,7 +29,24 @@
       "PowerShell(git add -A)",
       "PowerShell(git push -q)",
       "PowerShell(Get-ChildItem results\\\\runs_deepseek-chat.jsonl, results\\\\runs_qwen-72b.jsonl, results\\\\runs_kimi-k2.jsonl | ForEach-Object { $last = Get-Content $_.FullName -Tail 1 | ConvertFrom-Json; \"$\\($_.Name\\): $\\(\\(Get-Content $_.FullName | Measure-Object -Line\\).Lines\\)/160 episodes, last write $\\($_.LastWriteTime.ToString\\('HH:mm:ss'\\)\\) \\($\\($last.condition\\) $\\($last.item_id\\): $\\($last.outcome\\)\\)\" })",
-      "PowerShell(python make_figure.py)"
+      "PowerShell(python make_figure.py)",
+      "PowerShell(git fetch algoverse 2>&1)",
+      "PowerShell(git worktree add cbv2 algoverse/codex/curiobench-v2 2>&1)",
+      "PowerShell(.\\\\.venv\\\\Scripts\\\\python.exe -m pip install --quiet -e .\\\\cbv2 pytest 2>&1)",
+      "PowerShell(.\\\\.venv\\\\Scripts\\\\python.exe -c \"import curiobench; print\\('curiobench', curiobench.__version__\\)\")",
+      "PowerShell(.\\\\.venv\\\\Scripts\\\\python.exe -c \"from curiobench.config import VERSION; print\\('version', VERSION\\)\")",
+      "PowerShell(.\\\\.venv\\\\Scripts\\\\python.exe -m pytest cbv2\\\\tests -q 2>&1)",
+      "PowerShell(.\\\\.venv\\\\Scripts\\\\python.exe -c \"import curiobench.validate as v; import inspect; print\\([f for f in dir\\(v\\) if not f.startswith\\('_'\\)][:10]\\); print\\('main' in dir\\(v\\)\\)\")",
+      "PowerShell(.\\\\.venv\\\\Scripts\\\\python.exe -m pip install --quiet httpx)",
+      "PowerShell(python hetero_hops.py)",
+      "PowerShell(git add hetero_hops.py)",
+      "PowerShell(git push -q origin main)",
+      "PowerShell(git push -q algoverse main:joshua-llm-curiosity)",
+      "PowerShell(Set-Location cbv2; foreach \\($f in @\\('meta-llama__llama-3.1-8b-instruct__toolcall__test.jsonl','deepseek__deepseek-chat__toolcall__test.jsonl','anthropic__claude-sonnet-5__toolcall__test.jsonl'\\)\\) { ..\\\\.venv\\\\Scripts\\\\python.exe -m curiobench.scoring \"runs/$f\" --out \"runs/scored_$f\" 2>&1 | Select-Object -Last 3 | Out-String }; Set-Location ..)",
+      "PowerShell(.\\\\.venv\\\\Scripts\\\\python.exe tier_curves.py 2>&1)",
+      "PowerShell(.\\\\.venv\\\\Scripts\\\\python.exe tier_diag.py 2>&1)",
+      "PowerShell(Copy-Item cbv2\\\\runs\\\\leaderboard.md results\\\\curiobench_v2_leaderboard.md)",
+      "PowerShell(git add tier_curves.py tier_diag.py results\\\\curiobench_v2_leaderboard.md)"
     ]
   }
 }

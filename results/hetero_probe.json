@@ -1,0 +1,149 @@
+{
+ "model": "anthropic/claude-sonnet-5",
+ "results": {
+  "A_lookup_x5": 1.0,
+  "B_hetero": 1.0
+ },
+ "detail": [
+  {
+   "arm": "A_lookup_x5",
+   "seed": 1000,
+   "expect": "ADF7B0-E6F74A-01E453",
+   "got": "ADF7B0-E6F74A-01E453",
+   "correct": true
+  },
+  {
+   "arm": "A_lookup_x5",
+   "seed": 1001,
+   "expect": "497AE7-4EF7E6-28EB31",
+   "got": "497AE7-4EF7E6-28EB31",
+   "correct": true
+  },
+  {
+   "arm": "A_lookup_x5",
+   "seed": 1002,
+   "expect": "0FB1EF-102B5D-AE69FB",
+   "got": "0FB1EF-102B5D-AE69FB",
+   "correct": true
+  },
+  {
+   "arm": "A_lookup_x5",
+   "seed": 1003,
+   "expect": "E2BD1C-358730-160163",
+   "got": "E2BD1C-358730-160163",
+   "correct": true
+  },
+  {
+   "arm": "A_lookup_x5",
+   "seed": 1004,
+   "expect": "E035DE-8D087A-134936",
+   "got": "E035DE-8D087A-134936",
+   "correct": true
+  },
+  {
+   "arm": "A_lookup_x5",
+   "seed": 1005,
+   "expect": "14B966-8D1A6A-086105",
+   "got": "14B966-8D1A6A-086105",
+   "correct": true
+  },
+  {
+   "arm": "A_lookup_x5",
+   "seed": 1006,
+   "expect": "143F2D-DA6053-1A3737",
+   "got": "143F2D-DA6053-1A3737",
+   "correct": true
+  },
+  {
+   "arm": "A_lookup_x5",
+   "seed": 1007,
+   "expect": "3133B0-30F520-CDCE53",
+   "got": "3133B0-30F520-CDCE53",
+   "correct": true
+  },
+  {
+   "arm": "A_lookup_x5",
+   "seed": 1008,
+   "expect": "12546F-3C058D-9D128C",
+   "got": "12546F-3C058D-9D128C",
+   "correct": true
+  },
+  {
+   "arm": "A_lookup_x5",
+   "seed": 1009,
+   "expect": "78055A-C14BD8-402470",
+   "got": "78055A-C14BD8-402470",
+   "correct": true
+  },
+  {
+   "arm": "B_hetero",
+   "seed": 1000,
+   "expect": "04B16C-876887-0AD443",
+   "got": "04B16C-876887-0AD443",
+   "correct": true
+  },
+  {
+   "arm": "B_hetero",
+   "seed": 1001,
+   "expect": "12E582-E3C841-A2175B",
+   "got": "12E582-E3C841-A2175B",
+   "correct": true
+  },
+  {
+   "arm": "B_hetero",
+   "seed": 1002,
+   "expect": "396310-91F4C8-F2ECE9",
+   "got": "396310-91F4C8-F2ECE9",
+   "correct": true
+  },
+  {
+   "arm": "B_hetero",
+   "seed": 1003,
+   "expect": "6E7CD6-67EFD9-8F698B",
+   "got": "6E7CD6-67EFD9-8F698B",
+   "correct": true
+  },
+  {
+   "arm": "B_hetero",
+   "seed": 1004,
+   "expect": "66F50E-9D78C2-A1E7EF",
+   "got": "66F50E-9D78C2-A1E7EF",
+   "correct": true
+  },
+  {
+   "arm": "B_hetero",
+   "seed": 1005,
+   "expect": "FD5AF4-6FC128-3E0236",
+   "got": "FD5AF4-6FC128-3E0236",
+   "correct": true
+  },
+  {
+   "arm": "B_hetero",
+   "seed": 1006,
+   "expect": "133C6B-BCF8FF-814788",
+   "got": "133C6B-BCF8FF-814788",
+   "correct": true
+  },
+  {
+   "arm": "B_hetero",
+   "seed": 1007,
+   "expect": "69DE7A-D4BC16-0D586C",
+   "got": "69DE7A-D4BC16-0D586C",
+   "correct": true
+  },
+  {
+   "arm": "B_hetero",
+   "seed": 1008,
+   "expect": "C2BC06-1FF9D8-BA8D1D",
+   "got": "C2BC06-1FF9D8-BA8D1D",
+   "correct": true
+  },
+  {
+   "arm": "B_hetero",
+   "seed": 1009,
+   "expect": "DC923C-56A45C-A50039",
+   "got": "DC923C-56A45C-A50039",
+   "correct": true
+  }
+ ]
+}
